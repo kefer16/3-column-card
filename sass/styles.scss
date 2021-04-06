@@ -23,7 +23,7 @@ $Very_light_gray: hsl(0, 0%, 95%);
 body{
     width: 100%;
     display: flex;
-    background-color: $Transparent_white;
+    background-color: darken($Transparent_white,10%);
    
 }
 
@@ -47,6 +47,7 @@ body{
     grid-template-columns: 1fr;
     border-radius: 0.7em;
     overflow: hidden;
+    // box-shadow: 0 0 1em darken($Transparent_white,30%);
     @media only screen and (min-width:1000px) {
        width: 70%;
        margin: auto;
