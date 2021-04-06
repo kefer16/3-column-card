@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+:root{
+    font-size: 15px;
+    
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+// Primary
+
+$Bright_orange: hsl(31, 77%, 52%);
+$Dark_cyan: hsl(184, 100%, 22%);
+$Very_dark_cyan: hsl(179, 100%, 13%);
+
+// Neutral
+
+$Transparent_white: hsla(0, 0%, 100%, 0.75);
+$Very_light_gray: hsl(0, 0%, 95%);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    display: flex;
+    background-color: $Transparent_white;
+   
+}
+
+.content{
+    // border: 1px solid red;
+    margin: 0 auto;
+    max-width: 375px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    @media only screen and (min-width:1000px) {
+       
+        max-width: 1440px;
+    }
+}
+.cards{
+    // border: 1px solid red;
+    margin: 5em auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 0.7em;
+    overflow: hidden;
+    @media only screen and (min-width:1000px) {
+       width: 70%;
+       margin: auto;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    overflow: hidden;
+    // opacity: 0;
+    &.one{
+        background-color: $Bright_orange;
+        -webkit-animation:1s animation-opacity linear;
+                animation:1s animation-opacity linear;
+    }
+    &.two{
+        background-color: $Dark_cyan;
+        -webkit-animation:2s animation-opacity linear;
+                animation:2s animation-opacity linear;
+    }
+    &.three{
+        background-color: $Very_dark_cyan;
+        -webkit-animation:3s animation-opacity linear;
+                animation:3s animation-opacity linear;
+    }
+    &__image{
+        // border: 1px solid red;
+        width: 4.5em;
+        -webkit-animation: 2s animation-rigth ease;
+                animation: 2s animation-rigth ease;
+    }
+    &__title{
+        // border: 1px solid red;
+        margin: 0.8em 0;
+        font-family: 'Big Shoulders Display', cursive;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $Very_light_gray;
+        font-size: 2.7em;
+    }
+    &__description{
+        // border: 1px solid red;
+        font-size: 1em;
+        color: $Transparent_white;
+        line-height: 1.7em;
+        margin-bottom: 1em;
+        font-weight: 400;
+        @media only screen and (min-width:1000px) {
+            margin-bottom: 5em;
+        }
+    }
+    &__button{
+        width: 10em;
+        text-decoration: none;
+        background-color: $Very_light_gray;
+        color: inherit;
+        padding: 1em;
+        text-align: center;
+        border: 2px solid $Very_light_gray;
+        border-radius: 50px;
+        color: $Very_light_gray;
+        transition: .5s ease;
+        &:hover{
+           
+            background: transparent;
+           
+        }
+        &.one{
+            color: $Bright_orange;
+           
+            &:hover{
+                
+                color: $Very_light_gray;
+                & > .card__image{
+                    transform: translateX(20px);
+                }
+            }
+        }
+        &.two{
+            color: $Dark_cyan;
+           
+            &:hover{
+                
+                color: $Very_light_gray;
+            }
+        }
+        &.three{
+            color: $Very_dark_cyan;
+           
+            &:hover{
+                
+                color: $Very_light_gray;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes animation-opacity{
+    
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes animation-opacity{
+    
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animation-rigth{
+    
+    from{
+       transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes animation-rigth{
+    
+    from{
+       transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.attribution { 
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0.5em;
+    font-size: 11px; 
+    text-align: center; 
+    background-color: darken($Transparent_white, 30%);
+    color: $Transparent_white;
+    & a { 
+        color: $Dark_cyan;
+        
+    }
+}

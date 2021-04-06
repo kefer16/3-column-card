@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+:root {
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 375px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (min-width: 1000px) {
+  .content {
+    max-width: 1440px;
+  }
+}
+
+.cards {
+  margin: 5em auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 0.7em;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1000px) {
+  .cards {
+    width: 70%;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+  overflow: hidden;
+}
+.card.one {
+  background-color: #e38826;
+  animation: 1s animation-opacity linear;
+}
+.card.two {
+  background-color: #006970;
+  animation: 2s animation-opacity linear;
+}
+.card.three {
+  background-color: #004241;
+  animation: 3s animation-opacity linear;
+}
+.card__image {
+  width: 4.5em;
+  animation: 2s animation-rigth ease;
+}
+.card__title {
+  margin: 0.8em 0;
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  font-size: 2.7em;
+}
+.card__description {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7em;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+@media only screen and (min-width: 1000px) {
+  .card__description {
+    margin-bottom: 5em;
+  }
+}
+.card__button {
+  width: 10em;
+  text-decoration: none;
+  background-color: #f2f2f2;
+  color: inherit;
+  padding: 1em;
+  text-align: center;
+  border: 2px solid #f2f2f2;
+  border-radius: 50px;
+  color: #f2f2f2;
+  transition: 0.5s ease;
+}
+.card__button:hover {
+  background: transparent;
+}
+.card__button.one {
+  color: #e38826;
+}
+.card__button.one:hover {
+  color: #f2f2f2;
+}
+.card__button.one:hover > .card__image {
+  transform: translateX(20px);
+}
+.card__button.two {
+  color: #006970;
+}
+.card__button.two:hover {
+  color: #f2f2f2;
+}
+.card__button.three {
+  color: #004241;
+}
+.card__button.three:hover {
+  color: #f2f2f2;
+}
+@keyframes animation-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animation-rigth {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.attribution {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 0.5em;
+  font-size: 11px;
+  text-align: center;
+  background-color: rgba(179, 179, 179, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+}
+.attribution a {
+  color: #006970;
+}
